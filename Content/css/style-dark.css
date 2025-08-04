@@ -3016,3 +3016,8 @@ section#resume ul.education li:hover:after {
 section#resume .row.mb-20:after {
     animation: timeline-pulse 3s infinite ease-in-out !important;
 }
+ul.experience li,
+ul.education li {
+    position: relative;
+}
+
