@@ -1402,7 +1402,7 @@ header .header-mobile .header-toggle i {
   font-size: 62px;
   font-weight: 500;
   color: var(--primary-teal);
-  margin-bottom: 40px;  /* ← Add or increase this value */
+  margin-bottom: 70px;  /* ← Add or increase this value */
 }
 
 .banner-section .banner-content h1 span {
