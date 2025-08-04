@@ -1861,3 +1861,25 @@ header .header-mobile .header-toggle i {
         border: none; 
     }
 }
+
+
+.research-text {
+  color: #e0e0e0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.research-text ul {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.research-text a {
+  color: #66ccff;
+  text-decoration: underline;
+}
+
+.research-text a:hover {
+  color: #ffffff;
+}
