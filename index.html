@@ -112,7 +112,7 @@
             </section>
             <!--Banner Section End-->
             <!--About Section Start-->
-            <section id="about" class="about-section pt-page">
+            <section id="about" class="about-section pt-page" data-section="about">
                 <div class="section-container">
                     <!--Page Heading-->
                     <div class="page-heading">
@@ -283,7 +283,7 @@
             </section>
             <!--About Section Start-->
             <!--Resume Section Start-->
-            <section id="resume" class="resume-section pt-page">
+            <section id="resume" class="about-section pt-page" data-section="resume">
                 <div class="section-container">
                     <div class="page-heading">
                         <span class="icon"><i class="lnr lnr-license"></i></span>
@@ -495,7 +495,7 @@
             <!--Resume Section End-->
           
 <!--Research Section Start-->
-<section id="research" class="pt-page">
+<section id="research" class="about-section pt-page" data-section="research">
   <div class="section-container">
 
     <!-- Page Heading -->
@@ -664,7 +664,7 @@
             </section>
           Blog Section End --> 
             <!--Contact Section Start-->
-            <section id="contact" class="contact-section pt-page">
+            <section id="contact" class="about-section pt-page" data-section="contact">
                 <div class="section-container">
                     <!--Page Heading-->
                     <div class="page-heading">
@@ -774,9 +774,85 @@
 
     <script src="https://static.elfsight.com/platform/platform.js" async></script>
     <div class="elfsight-app-15131914-3a9a-443b-90a6-cf28770d182b" data-elfsight-app-lazy></div>
+
+    <!--Ajax Portfolio Container Start-->
+    <div class="ajax-portfolio-popup" data-simplebar>
+        <span class="ajax-loader"></span>
+        <div class="navigation-wrap">
+            <span class="popup-close"><i class="fas fa-times-circle"></i></span>
+        </div>
+        <div class="content-wrap">
+            <div class="popup-content"></div>
+        </div>
+    </div>
+    <!--Ajax Portfolio Container End-->
+    <!--Jquery JS-->
+    <script src="js/jquery.min.js"></script>
+    <!--Plugins JS-->
+    <script src="js/plugins.min.js"></script>
+    <!--Google Map Api-->
+    <!--Site Main JS-->
+    <script src="js/main.js"></script>
+    <script>
+    $(document).ready(function () {
+            // Change Your Video Here
+            $('#video-container').vide({
+                'mp4': 'http://watson-vcard.netlify.com/video/video1.mp4',
+                'webm': 'http://watson-vcard.netlify.com/video/video1.webm',
+                'ogv': 'http://watson-vcard.netlify.com/video/video1.ogv',
+            });
+        });</script>
+    
+    <!-- ADD THE SCROLLSPY JAVASCRIPT HERE -->
+    <script>
+    // Academic ScrollSpy Implementation
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('[data-section]');
+        const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+        
+        function updateActiveNav() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('data-section');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active', 'in-view');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').slice(1);
+                const targetSection = document.querySelector(`[data-section="${targetId}"]`);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        window.addEventListener('scroll', updateActiveNav);
+        updateActiveNav();
+    });
+    </script>
+    <!-- END SCROLLSPY JAVASCRIPT -->
+    
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-15131914-3a9a-443b-90a6-cf28770d182b" data-elfsight-app-lazy></div>
+</body>
 </body>
 
 </html>
+
 
 
 
