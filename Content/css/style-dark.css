@@ -6,19 +6,34 @@
  \____\___/|___/_| |_| |_|\___/|___/     |_| |_| |_|\___|_| |_| |_|\___||___/
 ******************************************************************************/
 
-/*============ TEAL COLOR VARIABLES ============*/
+/*============ PROFESSIONAL COLOR SYSTEM ============*/
 :root {
-    --primary-teal: #00bcd4;
-    --light-teal: #66ccff;
-    --dark-teal: #00838f;
-    --accent-teal: #4dd0e1;
-    --bg-dark: #0f0f0f;
-    --bg-lighter: #1a1a1a;
-    --bg-section: #161616;
-    --text-light: #ffffff;
-    --text-secondary: #e0e0e0;
-    --text-muted: #c0c0c0;
-    --border-subtle: #2a2a2a;
+    /* Primary Teal Palette */
+    --primary-teal: #1dd1a1;
+    --light-teal: #55efc4;
+    --dark-teal: #00b894;
+    --accent-teal: #74b9ff;
+    
+    /* Sophisticated Background System */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #131313;
+    --bg-tertiary: #1a1a1a;
+    --bg-card: #1e1e1e;
+    --bg-hover: #252525;
+    
+    /* Professional Typography Scale */
+    --text-primary: #f8f9fa;      /* High contrast white for headings */
+    --text-secondary: #e9ecef;    /* Comfortable reading color */
+    --text-tertiary: #ced4da;     /* Secondary information */
+    --text-muted: #adb5bd;        /* Subtle details */
+    --text-accent: #1dd1a1;       /* Accent color for highlights */
+    
+    /* Border and Shadow System */
+    --border-primary: #2a2a2a;
+    --border-accent: #1dd1a1;
+    --shadow-subtle: rgba(0, 0, 0, 0.3);
+    --shadow-medium: rgba(0, 0, 0, 0.5);
+    --shadow-accent: rgba(29, 209, 161, 0.2);
 }
 
 /************ Dark Style Css **************************************
@@ -83,12 +98,14 @@ body {
 }
 
 body {
-    font-size: 17px;
+    font-size: 16px;
     font-family: "Roboto", sans-serif;
-    line-height: 1.7;
-    color: var(--text-light);
-    background-color: var(--bg-dark);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    background-color: var(--bg-primary);
     font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -98,8 +115,18 @@ h4,
 h5,
 h6 {
     font-family: "Playfair Display", serif;
-    color: var(--primary-teal);
+    color: var(--text-primary);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.5em;
 }
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
 
 span {
     display: inline-block;
@@ -113,12 +140,25 @@ img {
 a,
 a:hover,
 a:focus {
-    color: var(--light-teal);
-    transition: color 0.3s ease;
+    color: var(--text-accent);
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 a:hover {
-    color: var(--primary-teal);
+    color: var(--light-teal);
+    text-decoration: underline;
+}
+
+p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1em;
+}
+
+strong, b {
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 /************ Margin & Padding ************/
@@ -393,127 +433,151 @@ a:hover {
 
 /*============= 2. Helper  ==================*/
 
-/********** Heading **********/
+/********** Professional Heading System **********/
 
 .page-heading {
-    margin-bottom: 60px;
-    margin-top: 60px;
-    border-bottom: 2px solid var(--primary-teal);
-    padding-bottom: 15px;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    border-bottom: 3px solid var(--text-accent);
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.page-heading:after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--text-accent), var(--light-teal));
 }
 
 .page-heading .icon {
     float: right;
-    font-size: 42px;
+    font-size: 2.5rem;
     line-height: 1em;
-    color: var(--primary-teal);
+    color: var(--text-accent);
+    opacity: 0.8;
 }
 
 .page-heading h2 {
-    font-size: 42px;
+    font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 2px;
     line-height: 1.2;
     text-transform: capitalize;
-    color: var(--primary-teal);
+    color: var(--text-primary);
     position: relative;
     display: inline-block;
+    margin: 0;
 }
 
 .subheading {
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 3rem;
     text-align: center;
 }
 
 .subheading h3 {
     display: inline-block;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     line-height: 1.2;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     position: relative;
     text-transform: uppercase;
-    padding: 8px 15px;
-    border-bottom: 3px solid var(--primary-teal);
-    color: var(--primary-teal);
-    background-color: var(--bg-section);
-    border-radius: 6px 6px 0 0;
-}
-
-.subheading h3:before,
-.subheading h3:after {
-    position: absolute;
-    content: "";
-    width: 3px;
-    height: 8px;
-    background-color: var(--primary-teal);
-    bottom: 0;
+    padding: 1rem 2rem;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-hover) 100%);
+    border: 2px solid var(--text-accent);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow-accent);
+    margin: 0;
 }
 
 .subheading h3:before {
-    left: 0;
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--text-accent), var(--light-teal), var(--accent-teal));
+    border-radius: 12px;
+    z-index: -1;
 }
 
 .subheading h3:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-hover) 100%);
+    border-radius: 10px;
+    z-index: -1;
 }
 
-/********** Progress Bar **********/
+/********** Professional Progress System **********/
 
 .progress-title {
-    font-size: 17px;
+    font-size: 1rem;
     font-weight: 600;
-    margin: 0 0 15px;
+    margin: 0 0 1rem;
     text-transform: uppercase;
-    color: var(--text-light);
-    letter-spacing: 0.5px;
+    color: var(--text-primary);
+    letter-spacing: 1px;
 }
 
 .progress {
-    height: 12px;
-    background-color: var(--border-subtle);
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
+    height: 8px;
+    background-color: var(--border-primary);
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
     -webkit-box-shadow: none;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
-    margin-bottom: 25px;
+    box-shadow: inset 0 2px 4px var(--shadow-subtle);
+    margin-bottom: 2rem;
     overflow: visible;
+    position: relative;
 }
 
 .progress .progress-bar {
     -webkit-box-shadow: none;
-    box-shadow: 0 1px 3px rgba(0, 188, 212, 0.4);
+    box-shadow: 0 0 10px var(--shadow-accent);
     position: relative;
-    background: linear-gradient(45deg, var(--primary-teal), var(--light-teal));
+    background: linear-gradient(90deg, var(--text-accent), var(--light-teal));
     width: 0;
-    border-radius: 6px;
-    -webkit-transition: all 2s ease-out;
-    -o-transition: all 2s ease-out;
-    transition: all 2s ease-out;
+    border-radius: 12px;
+    -webkit-transition: all 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: all 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
 }
 
 .progress .progress-bar:after {
     content: "";
     display: block;
-    border: 15px solid transparent;
-    border-bottom: 21px solid transparent;
+    border: 12px solid transparent;
+    border-bottom: 16px solid transparent;
     position: absolute;
-    top: -26px;
-    right: -12px;
-    border-bottom-color: var(--primary-teal);
+    top: -20px;
+    right: -8px;
+    border-bottom-color: var(--text-accent);
 }
 
 .progress .progress-value {
-    font-size: 15px;
-    font-weight: bold;
-    color: var(--primary-teal);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
     position: absolute;
-    top: -32px;
+    top: -28px;
     right: 0;
-    background-color: var(--bg-dark);
-    padding: 2px 6px;
-    border-radius: 4px;
+    background: linear-gradient(45deg, var(--text-accent), var(--light-teal));
+    padding: 4px 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px var(--shadow-accent);
 }
 
 /********** Form **********/
@@ -726,7 +790,7 @@ blockquote {
     }
 }
 
-/*============ 3. Layout ============*/
+/*============ 3. Professional Layout System ============*/
 
 .header-main {
     position: fixed;
@@ -734,13 +798,14 @@ blockquote {
     height: 100%;
     z-index: 300;
     width: 200px;
-    background-color: var(--bg-dark);
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
     overflow: auto;
     left: 0;
     overflow-x: hidden;
     text-align: center;
     z-index: 999;
-    border-right: 1px solid var(--primary-teal);
+    border-right: 2px solid var(--text-accent);
+    box-shadow: 4px 0 20px var(--shadow-medium);
 }
 
 .header-main .image-container {
@@ -749,6 +814,7 @@ blockquote {
 
 .header-main .image-container img {
     position: relative;
+    border-bottom: 2px solid var(--text-accent);
 }
 
 .header-main .image-container .header-name {
@@ -756,13 +822,14 @@ blockquote {
     left: 0;
     bottom: 0;
     width: 100%;
-    color: #fff;
-    font-size: 20px;
+    color: var(--text-primary);
+    font-size: 18px;
     font-weight: 700;
-    padding: 10px 0;
+    padding: 12px 0;
     text-transform: uppercase;
     z-index: 1;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 10px var(--shadow-medium);
+    letter-spacing: 1px;
 }
 
 .header-main .image-container .header-name:before {
@@ -772,8 +839,7 @@ blockquote {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--bg-dark);
-    opacity: .8;
+    background: linear-gradient(180deg, transparent 0%, var(--bg-primary) 80%);
     z-index: -1;
 }
 
@@ -781,47 +847,67 @@ blockquote {
     font-size: 12px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    border-bottom: 1px solid var(--bg-lighter);
+    border-bottom: 1px solid var(--border-primary);
     text-align: left;
+    transition: all 0.3s ease;
+}
+
+.header-main nav.nav-menu ul li:hover {
+    background-color: var(--bg-hover);
 }
 
 .header-main nav.nav-menu ul li a {
     display: block;
-    line-height: 45px;
+    line-height: 50px;
     padding-left: 70px;
     position: relative;
-    color: var(--text-muted);
-    transition: color 0.3s ease;
+    color: var(--text-tertiary);
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .header-main nav.nav-menu ul li a:hover {
-    color: var(--primary-teal);
+    color: var(--text-accent);
+    padding-left: 75px;
 }
 
 .header-main nav.nav-menu ul li a span.nav-menu-icon {
     position: absolute;
     left: 40px;
     display: inline-block;
-    font-size: 20px;
-    color: var(--primary-teal);
+    font-size: 18px;
+    color: var(--text-accent);
+    transition: all 0.3s ease;
+}
+
+.header-main nav.nav-menu ul li a:hover span.nav-menu-icon {
+    color: var(--light-teal);
+    transform: scale(1.1);
 }
 
 .header-main nav.nav-menu ul li a.active {
-    color: var(--primary-teal);
+    color: var(--text-primary);
+    background: linear-gradient(90deg, transparent 0%, var(--bg-hover) 100%);
+    border-right: 3px solid var(--text-accent);
+}
+
+.header-main nav.nav-menu ul li a.active span.nav-menu-icon {
+    color: var(--light-teal);
 }
 
 header .header-mobile {
     position: fixed;
     top: 0;
     left: 0;
-    height: 50px;
+    height: 60px;
     width: 100%;
-    background-color: var(--bg-dark);
+    background: linear-gradient(90deg, var(--bg-secondary), var(--bg-primary));
     z-index: 10;
     display: none;
     -webkit-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+    border-bottom: 2px solid var(--text-accent);
 }
 
 header .header-mobile h2 {
@@ -831,25 +917,31 @@ header .header-mobile h2 {
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     display: inline-block;
-    color: var(--primary-teal);
-    font-size: 24px;
+    color: var(--text-primary);
+    font-size: 22px;
     text-transform: uppercase;
-    line-height: 50px;
+    line-height: 60px;
     white-space: nowrap;
+    letter-spacing: 1px;
 }
 
 header .header-mobile .header-toggle {
-    font-size: 20px;
-    line-height: 50px;
+    font-size: 22px;
+    line-height: 60px;
     cursor: pointer;
-    width: 50px;
+    width: 60px;
     text-align: center;
-    border-left: 1px solid var(--primary-teal);
+    border-left: 2px solid var(--text-accent);
     float: right;
+    transition: all 0.3s ease;
+}
+
+header .header-mobile .header-toggle:hover {
+    background-color: var(--bg-hover);
 }
 
 header .header-mobile .header-toggle i {
-    color: var(--primary-teal);
+    color: var(--text-accent);
 }
 
 .header-main .nav-footer {
@@ -859,24 +951,28 @@ header .header-mobile .header-toggle i {
 
 .header-main .nav-footer .social {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .header-main .nav-footer .social li {
     display: inline-block;
-    font-size: 18px;
-    margin-right: 10px;
+    font-size: 20px;
+    margin-right: 15px;
 }
 
 .header-main .nav-footer .social li a {
     color: var(--text-muted);
-    -webkit-transition: color .2s ease;
-    -o-transition: color .2s ease;
-    transition: color .2s ease;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    padding: 8px;
+    border-radius: 50%;
 }
 
 .header-main .nav-footer .social li:hover a {
-    color: var(--primary-teal);
+    color: var(--text-accent);
+    background-color: var(--bg-hover);
+    transform: translateY(-2px);
 }
 
 .header-main .nav-footer .social li:last-child {
@@ -884,8 +980,9 @@ header .header-mobile .header-toggle i {
 }
 
 .header-main .nav-footer .copy p {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--text-muted);
+    line-height: 1.5;
 }
 
 .site-main {
@@ -898,6 +995,7 @@ header .header-mobile .header-toggle i {
     -webkit-perspective: 1200px;
     perspective: 1200px;
     overflow: hidden;
+    background-color: var(--bg-primary);
 }
 
 .site-main .pt-page {
@@ -919,9 +1017,10 @@ header .header-mobile .header-toggle i {
 }
 
 .site-main .pt-page .section-container {
-    max-width: 1040px;
-    width: 90%;
+    max-width: 1200px;
+    width: 95%;
     margin: 0 auto;
+    padding: 3rem 2rem;
 }
 
 .site-main .page-active {
@@ -1202,20 +1301,22 @@ header .header-mobile .header-toggle i {
 .resume-section ul.experience li {
     position: relative;
     margin-left: 15px;
-    padding: 25px 30px;
-    background-color: var(--bg-section);
-    border-radius: 8px;
+    padding: 30px 35px;
+    background: linear-gradient(135deg, var(--bg-section) 0%, #1c1c1c 100%);
+    border-radius: 12px;
     border-left: 4px solid var(--primary-teal);
     -webkit-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-subtle);
 }
 
 .resume-section ul.education li:hover,
 .resume-section ul.experience li:hover {
-    transform: translateX(5px);
-    box-shadow: 0 4px 20px rgba(0, 188, 212, 0.15);
+    transform: translateX(8px);
+    box-shadow: 0 8px 25px rgba(0, 188, 212, 0.2);
+    border-left-color: var(--light-teal);
 }
 
 .resume-section ul.education li:not(:first-child),
@@ -1261,33 +1362,35 @@ header .header-mobile .header-toggle i {
 
 .resume-section .education .content h4,
 .resume-section .experience .content h4 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     letter-spacing: .5px;
     line-height: 1.3;
-    margin: 0 0 8px 0;
+    margin: 0 0 10px 0;
     text-transform: uppercase;
     color: var(--primary-teal);
 }
 
 .resume-section .education .content h5,
 .resume-section .experience .content h5 {
-    margin-top: 8px;
-    margin-bottom: 12px;
-    font-size: 14px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    font-size: 15px;
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     text-transform: uppercase;
     color: var(--light-teal);
     letter-spacing: 1px;
+    opacity: 0.9;
 }
 
 .resume-section .education .content p.info,
 .resume-section .experience .content p.info {
-    font-size: 16px;
+    font-size: 17px;
     margin-bottom: 0px;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.7;
+    font-weight: 400;
 }
 
 .resume-section .education span.year,
@@ -1300,17 +1403,21 @@ header .header-mobile .header-toggle i {
 
 .resume-section .education span.year span,
 .resume-section .experience span.year span {
-    font-size: 16px;
+    font-size: 14px;
     position: absolute;
-    -webkit-transform: translateX(-130%);
-    -ms-transform: translateX(-130%);
-    transform: translateX(-130%);
-    color: var(--primary-teal);
+    -webkit-transform: translateX(-140%);
+    -ms-transform: translateX(-140%);
+    transform: translateX(-140%);
+    color: var(--text-light);
     font-weight: 700;
-    background-color: var(--bg-dark);
-    padding: 4px 8px;
-    border-radius: 4px;
+    background: linear-gradient(135deg, var(--primary-teal), var(--dark-teal));
+    padding: 6px 12px;
+    border-radius: 6px;
     border: 1px solid var(--primary-teal);
+    box-shadow: 0 2px 8px rgba(0, 188, 212, 0.3);
+    white-space: nowrap;
+    min-width: 60px;
+    text-align: center;
 }
 
 .resume-section .education span.year span.to,
@@ -1926,60 +2033,220 @@ header .header-mobile .header-toggle i {
     }
 }
 
-/* Research text styling to match the screenshot */
+/* Professional Research & Content Styling */
 .research-text {
   color: var(--text-secondary);
-  font-size: 17px;
+  font-size: 1rem;
   line-height: 1.8;
   font-weight: 400;
 }
 
 .research-text ul {
-  margin-top: 15px;
-  margin-bottom: 25px;
-  padding-left: 25px;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
 }
 
 .research-text ul li {
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   color: var(--text-secondary);
+  position: relative;
+}
+
+.research-text ul li:before {
+  content: '▸';
+  color: var(--text-accent);
+  position: absolute;
+  left: -1.5rem;
+  font-weight: bold;
 }
 
 .research-text a {
-  color: var(--light-teal);
-  text-decoration: underline;
-  transition: color 0.3s ease;
+  color: var(--text-accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
   font-weight: 500;
+  border-bottom: 1px solid transparent;
 }
 
 .research-text a:hover {
-  color: var(--primary-teal);
+  color: var(--light-teal);
+  border-bottom-color: var(--light-teal);
   text-decoration: none;
 }
 
-/* Additional improvements for job market readability */
-p {
-  color: var(--text-secondary);
-  line-height: 1.7;
+/* Enhanced Typography Hierarchy */
+.research-text h1, .research-text h2, .research-text h3, .research-text h4 {
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
-strong, b {
-  color: var(--text-light);
+.research-text p {
+  margin-bottom: 1.2rem;
+}
+
+.research-text strong, .research-text b {
+  color: var(--text-primary);
   font-weight: 600;
+}
+
+.research-text em, .research-text i {
+  color: var(--text-accent);
+  font-style: italic;
 }
 
 /* Better section spacing */
 .pt-page .section-container {
-  padding: 40px 0;
+  padding: 3rem 2rem;
 }
 
-/* Improved list styling */
+/* Professional list styling */
 ul li {
   color: var(--text-secondary);
 }
 
-/* Better contrast for important elements */
-.header-main nav.nav-menu ul li a {
-  font-size: 13px;
-  font-weight: 500;
+ol li {
+  color: var(--text-secondary);
+}
+
+/* Enhanced blockquotes */
+blockquote {
+    font-size: 1.1rem;
+    color: var(--text-accent);
+    border-left: 4px solid var(--text-accent);
+    font-style: italic;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-weight: 500;
+    background: linear-gradient(90deg, transparent, var(--bg-card) 50%, transparent);
+    padding: 1rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Code styling */
+code {
+    background-color: var(--bg-card);
+    color: var(--text-accent);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+}
+
+pre {
+    background-color: var(--bg-card);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--text-accent);
+    overflow-x: auto;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-primary);
+}
+
+th {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+td {
+    color: var(--text-secondary);
+}
+
+/* Enhanced form styling */
+.input__field {
+    width: 100%;
+    border: 2px solid var(--border-primary);
+    padding: 0.75rem 1rem;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.input__field:focus {
+    outline: none;
+    border-color: var(--text-accent);
+    box-shadow: 0 0 0 3px rgba(29, 209, 161, 0.1);
+}
+
+.input__label {
+    color: var(--text-tertiary);
+    font-weight: 500;
+}
+
+.input__field:focus + .input__label,
+.input--filled .input__label {
+    color: var(--text-accent);
+}
+
+/* Professional button styling */
+.btn-main {
+    border: 2px solid var(--text-accent);
+    padding: 0.75rem 1.5rem;
+    text-transform: uppercase;
+    background: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-accent);
+    font-weight: 600;
+    position: relative;
+    line-height: 1;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.btn-main:hover,
+.btn-main:focus {
+    color: var(--text-primary);
+    background: linear-gradient(45deg, var(--text-accent), var(--light-teal));
+    border-color: var(--light-teal);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--shadow-accent);
+}
+
+/* Improved accessibility */
+:focus {
+    outline: 2px solid var(--text-accent);
+    outline-offset: 2px;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-accent);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--light-teal);
 }
