@@ -957,7 +957,7 @@ header .header-mobile .header-toggle i {
 }
 
 .banner-section .banner-content p .cd-words-wrapper:after {
-    background-color: #aaa;
+    background-color: ##e0e0e0;
     top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -1860,4 +1860,26 @@ header .header-mobile .header-toggle i {
     .portfolio-section .portfolio-filter ul {
         border: none; 
     }
+}
+
+
+.research-text {
+  color: #e0e0e0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.research-text ul {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.research-text a {
+  color: #66ccff;
+  text-decoration: underline;
+}
+
+.research-text a:hover {
+  color: #ffffff;
 }
