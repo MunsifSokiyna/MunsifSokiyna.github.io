@@ -1,0 +1,117 @@
+/* ====== Global Reset & Base ====== */
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  color: #4fc3f7;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+/* ====== Section Styling ====== */
+.section-container {
+  background-color: transparent;
+  color: #e0e0e0;
+}
+
+.page-heading h2 {
+  color: #4fc3f7;
+}
+
+.page-heading .icon i {
+  color: #4fc3f7;
+}
+
+/* ====== Timeline (Resume) ====== */
+.experience,
+.education {
+  color: #ffffff;
+}
+
+.experience .content h4,
+.education .content h4 {
+  color: #ffffff;
+}
+
+.experience .info,
+.education .info {
+  color: #cccccc;
+}
+
+.timeline:before,
+.experience li:before,
+.education li:before {
+  background: #4fc3f7;
+}
+
+.timeline .year {
+  color: #999;
+}
+
+/* ====== Sidebar ====== */
+.sidebar,
+.sidebar-wrapper {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.sidebar a,
+.sidebar .nav li a {
+  color: #ffffff;
+}
+
+.sidebar a:hover {
+  color: #4fc3f7;
+}
+
+/* ====== Contact & Forms ====== */
+input,
+textarea {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  border: 1px solid #4fc3f7;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #ffffff;
+}
+
+.btn,
+button,
+input[type="submit"] {
+  background-color: #4fc3f7;
+  color: #121212;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #0288d1;
+  color: #ffffff;
+}
+
+/* ====== Footer ====== */
+footer,
+.footer {
+  background-color: #121212;
+  color: #aaaaaa;
+  text-align: center;
+  font-size: 14px;
+  padding: 15px 0;
+}
+
+footer a {
+  color: #4fc3f7;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
