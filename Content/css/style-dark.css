@@ -3032,110 +3032,119 @@ ul.education li {
     box-shadow: 0 4px 12px rgba(0, 119, 190, 0.3);
 }
 
-/* ============ CIRCULAR PROFILE PICTURE COMPLETE SETUP ============ */
+/* ============ DEFINITIVE CIRCULAR PROFILE PICTURE FIX ============ */
+/* Add this to the VERY END of your style-dark.css file */
 
-/* 1. ADD THIS CSS TO YOUR style-dark.css FILE */
-
-/* Header container fix */
-.header-main {
-    position: fixed;
-    top: 0;
-    height: 100%;
-    z-index: 300;
+/* Force the header main container to proper dimensions */
+header .header-main {
+    position: fixed !important;
+    top: 0 !important;
+    height: 100% !important;
     width: 200px !important;
-    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    left: 0 !important;
     overflow: hidden !important;
-    left: 0;
-    text-align: center;
-    z-index: 999;
-    border-right: 2px solid var(--border-accent);
-    box-shadow: 4px 0 20px var(--shadow-medium);
+    z-index: 999 !important;
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%) !important;
+    border-right: 2px solid var(--border-accent) !important;
+    box-shadow: 4px 0 20px var(--shadow-medium) !important;
+    text-align: center !important;
 }
 
-/* Circular profile picture styling */
-.header-main .image-container.circular {
-    position: relative;
-    width: 100%;
+/* Circular image container */
+header .header-main .image-container.circular {
+    position: relative !important;
+    width: 100% !important;
     height: auto !important;
-    max-height: none !important;
-    padding: 30px 20px 20px 20px !important;
-    text-align: center;
+    padding: 25px 15px 15px 15px !important;
+    text-align: center !important;
+    overflow: visible !important;
 }
 
-.header-main .image-container.circular img.circular {
-    width: 120px !important;
-    height: 120px !important;
+/* Circular profile picture */
+header .header-main .image-container.circular img.circular {
+    width: 110px !important;
+    height: 110px !important;
     border-radius: 50% !important;
     object-fit: cover !important;
     margin: 0 auto !important;
     display: block !important;
-    border: 4px solid var(--border-accent) !important;
-    box-shadow: 0 6px 20px var(--shadow-medium) !important;
+    border: 3px solid #0077be !important;
+    box-shadow: 0 4px 15px rgba(0, 119, 190, 0.4) !important;
     transition: all 0.3s ease !important;
 }
 
-/* Hover effect for profile picture */
-.header-main .image-container.circular img.circular:hover {
+/* Hover effect */
+header .header-main .image-container.circular img.circular:hover {
     transform: scale(1.05) !important;
-    box-shadow: 0 8px 25px rgba(0, 119, 190, 0.4) !important;
+    box-shadow: 0 6px 20px rgba(0, 119, 190, 0.6) !important;
 }
 
-/* Header name styling for circular */
-.header-main .image-container.circular .header-name {
+/* Header name for circular */
+header .header-main .image-container.circular .header-name {
     position: static !important;
-    margin-top: 15px !important;
+    margin-top: 12px !important;
     background: none !important;
-    color: var(--text-primary);
-    font-size: 16px !important;
-    font-weight: 600;
+    color: var(--text-primary) !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
     padding: 0 !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: "Roboto", sans-serif;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-family: "Roboto", sans-serif !important;
     text-shadow: none !important;
+    width: 100% !important;
+    left: auto !important;
+    bottom: auto !important;
 }
 
-.header-main .image-container.circular .header-name:before {
+/* Remove any conflicting pseudo-elements */
+header .header-main .image-container.circular .header-name:before {
     display: none !important;
 }
 
-/* Ensure proper site layout */
-.site-main {
-    position: absolute;
-    top: 0;
+/* Ensure main content doesn't overlap */
+#main.site-main {
+    position: absolute !important;
+    top: 0 !important;
     left: 200px !important;
-    right: 0;
-    width: auto;
-    height: 100%;
-    perspective: 1200px;
-    overflow: hidden;
-    background-color: var(--bg-primary);
+    right: 0 !important;
+    width: auto !important;
+    height: 100% !important;
+    background-color: var(--bg-primary) !important;
+}
+
+/* Fix banner spacing */
+.banner-section .banner-content h1 {
+    margin-bottom: 2rem !important;
+    line-height: 1.1 !important;
 }
 
 /* Mobile responsive */
 @media screen and (max-width: 767px) {
-    .header-main {
-        left: -200px;
-        transition: all .3s ease-in-out;
+    header .header-main {
+        left: -200px !important;
+        transition: all .3s ease-in-out !important;
     }
     
-    .site-main {
+    #main.site-main {
         left: 0px !important;
-        transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out !important;
     }
     
-    .header-main .image-container.circular {
-        padding: 20px 15px 15px 15px !important;
+    header .header-main .image-container.circular {
+        padding: 20px 10px 10px 10px !important;
     }
     
-    .header-main .image-container.circular img.circular {
-        width: 100px !important;
-        height: 100px !important;
+    header .header-main .image-container.circular img.circular {
+        width: 90px !important;
+        height: 90px !important;
     }
     
-    .header-main .image-container.circular .header-name {
-        font-size: 14px !important;
-        margin-top: 10px !important;
+    header .header-main .image-container.circular .header-name {
+        font-size: 13px !important;
+        margin-top: 8px !important;
     }
 }
 
+/* Clear browser cache helper - change this number if you need to force refresh */
+/* Version: 1.0 */
