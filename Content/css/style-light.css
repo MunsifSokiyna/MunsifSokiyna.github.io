@@ -75,7 +75,7 @@ body {
     font-family: "Roboto", sans-serif;
     line-height: 1.65;
     color: #555;
-    background-color: #2a2b30;
+    background-color: #121212;
 }
 
 h1,
@@ -451,7 +451,7 @@ a:focus {
 
 .progress {
     height: 10px;
-    background-color: #e3e3e3;
+    background-color: #121212;
     -webkit-border-radius: 0;
     border-radius: 0;
     -webkit-box-shadow: none;
@@ -588,7 +588,7 @@ textarea {
     height: 100%;
     top: 0;
     left: 35%;
-    background-color: #222;
+    background-color: #121212;
     opacity: 0;
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
@@ -615,7 +615,7 @@ blockquote {
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-color: #FBFBFB;
+    background-color: #121212;
     z-index: 10000;
 }
 
@@ -714,7 +714,7 @@ blockquote {
     height: 100%;
     z-index: 300;
     width: 200px;
-    background-color: #2a2b30;
+    background-color: #121212;
     overflow: auto;
     left: 0;
     overflow-x: hidden;
@@ -752,7 +752,7 @@ blockquote {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #2a2b30;
+    background-color: #121212;
     opacity: .8;
     z-index: -1;
 }
@@ -790,7 +790,7 @@ header .header-mobile {
     left: 0;
     height: 50px;
     width: 100%;
-    background-color: #2a2b30;
+    background-color: #121212;
     z-index: 10;
     display: none;
     -webkit-transition: all .3s ease-in-out;
@@ -924,7 +924,7 @@ header .header-mobile .header-toggle i {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #181818;
+    background-color: #121212;
     opacity: .5;
 }
 
@@ -957,7 +957,7 @@ header .header-mobile .header-toggle i {
 }
 
 .banner-section .banner-content p .cd-words-wrapper:after {
-    background-color: ##e0e0e0;
+    background-color: #121212;
     top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -998,7 +998,7 @@ header .header-mobile .header-toggle i {
 /*============ 5. About Section ============*/
 
 .about-section {
-    background-color: #FBFBFB;
+    background-color: #121212;
 }
 
 .about-section .about h3 {
@@ -1080,7 +1080,7 @@ header .header-mobile .header-toggle i {
 }
 
 .testimonials .testimonial-item .testimonial-content {
-    background-color: #e3e3e3;
+    background-color: #121212;
     width: 100%;
     -webkit-border-radius: 50px 0 50px 0;
     border-radius: 50px 0 50px 0;
@@ -1154,7 +1154,7 @@ header .header-mobile .header-toggle i {
 /*============ 6. Resume Section ============*/
 
 .resume-section {
-    background-color: #FBFBFB;
+    background-color: #121212;
 }
 
 .resume-section ul.education,
@@ -1185,7 +1185,7 @@ header .header-mobile .header-toggle i {
 .resume-section ul.experience li span.line-left {
     width: 2px;
     height: 100%;
-    background-color: #555;
+    background-color: #121212;
     left: -10px;
     top: 0;
     position: absolute;
@@ -1282,7 +1282,7 @@ header .header-mobile .header-toggle i {
 /*============ 7. Portfolio Section ============*/
 
 .portfolio-section {
-    background-color: #FBFBFB;
+    background-color: #121212;
 }
 
 .portfolio-section .portfolio-filter {
@@ -1314,7 +1314,7 @@ header .header-mobile .header-toggle i {
 }
 
 .portfolio-section .portfolio-filter ul li.active {
-    background-color: #222;
+    background-color: #121212;
     -webkit-border-radius: 27px;
     border-radius: 27px;
     color: #FBFBFB;
@@ -1343,7 +1343,7 @@ header .header-mobile .header-toggle i {
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: #000;
+    background-color: #121212;
     opacity: 0;
     -webkit-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
@@ -1447,13 +1447,13 @@ header .header-mobile .header-toggle i {
 /*============ 8. Blog Section ============*/
 
 .blog-section {
-    background-color: #FBFBFB;
+    background-color: #121212;
 }
 
 .blog-section .blog-item {
     position: relative;
     display: block;
-    background-color: #f9f9f9;
+    background-color: #121212;
     border: 1px solid #e3e3e3;
     margin-bottom: 50px;
     overflow: hidden;
@@ -1476,7 +1476,7 @@ header .header-mobile .header-toggle i {
     text-align: center;
     width: 82%;
     position: relative;
-    background-color: #f9f9f9;
+    background-color: #121212;
     margin-left: auto;
     margin-right: auto;
     margin-top: -40px;
@@ -1508,7 +1508,7 @@ header .header-mobile .header-toggle i {
 /*============ 9. Contact Section ============*/
 
 .contact-section {
-    background-color: #FBFBFB;
+    background-color: #121212;
 }
 
 .contact-section #map {
@@ -1538,7 +1538,7 @@ header .header-mobile .header-toggle i {
 /*============ 10. Ajax Portfolio ============*/
 
 .ajax-portfolio-popup {
-    background-color: #FBFBFB;
+    background-color: #121212;
     position: fixed;
     display: block;
     top: 0;
@@ -1574,7 +1574,7 @@ header .header-mobile .header-toggle i {
     width: 100%;
     text-align: center;
     height: 80px;
-    background-color: #2a2b30;
+    background-color: #121212;
     z-index: 10;
 }
 
@@ -1679,7 +1679,7 @@ header .header-mobile .header-toggle i {
 }
 
 .blog-page {
-    background-color: #FBFBFB;
+    background-color: #121212;
     padding-bottom: 50px;
 }
 
@@ -1690,7 +1690,7 @@ header .header-mobile .header-toggle i {
 }
 
 .blog-page .blog-heading {
-    background-color: #FBFBFB;
+    background-color: #121212;
     margin-top: -100px;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -1750,7 +1750,7 @@ header .header-mobile .header-toggle i {
 
 .blog-page .blog-comments .comment-list .comment .comment-text .reply a {
     font-size: 10px;
-    background-color: #222;
+    background-color: #121212;
     color: #FFF;
     padding: 3px 8px 4px 8px;
     -webkit-border-radius: 10px;
