@@ -3136,8 +3136,8 @@ header .header-main .image-container.circular .header-name:before {
     }
     
     header .header-main .image-container.circular img.circular {
-        width: 90px !important;
-        height: 90px !important;
+        width: 110px !important;
+        height: 110px !important;
     }
     
     header .header-main .image-container.circular .header-name {
