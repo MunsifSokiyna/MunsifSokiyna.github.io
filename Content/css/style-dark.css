@@ -1397,12 +1397,12 @@ header .header-mobile .header-toggle i {
 }
 
 .banner-section .banner-content h1 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 62px;
-    font-weight: 500;
-    color: var(--primary-teal);
-    margin-bottom: 40px; /* ← Add this line */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 62px;
+  font-weight: 500;
+  color: var(--primary-teal);
+  margin-bottom: 40px;  /* ← Add or increase this value */
 }
 
 .banner-section .banner-content h1 span {
