@@ -2690,18 +2690,136 @@ td {
     box-shadow: 0 0 8px rgba(0, 188, 212, 0.4);
 }
 
-/* Enhanced hover effects for connected timeline */
-.resume-section ul.experience li:hover:before,
-.resume-section ul.education li:hover:before {
-    background: linear-gradient(90deg, var(--light-teal), var(--primary-teal));
-    width: 40px;
+/* ============ TIMELINE CONNECTION ADDITIONS ============ */
+/* Add this CSS to your existing style-dark.css file */
+
+/* Main timeline container modifications - using correct selectors */
+#resume .row.mb-20 {
+    position: relative !important;
 }
 
-.resume-section ul.experience li:hover:after,
-.resume-section ul.education li:hover:after {
-    background: var(--light-teal);
-    transform: translateY(-50%) scale(1.2);
-    box-shadow: 0 0 12px rgba(0, 188, 212, 0.6);
+/* Central connecting line between columns */
+#resume .row.mb-20:before {
+    content: '' !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 100px !important;
+    bottom: 100px !important;
+    width: 4px !important;
+    background: linear-gradient(180deg, #0077be, #00bcd4) !important;
+    transform: translateX(-50%) !important;
+    z-index: 1 !important;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.4) !important;
+    border-radius: 2px !important;
+}
+
+/* Central timeline dots */
+#resume .row.mb-20:after {
+    content: '' !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: 24px !important;
+    height: 24px !important;
+    background: radial-gradient(circle, #0077be, #005082) !important;
+    border: 5px solid #0d1117 !important;
+    border-radius: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 10 !important;
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.6) !important;
+}
+
+/* Experience column positioning */
+#resume .col-lg-6:first-child {
+    position: relative !important;
+}
+
+/* Education column positioning */
+#resume .col-lg-6:last-child {
+    position: relative !important;
+}
+
+/* Override existing pseudo-elements and add horizontal connecting lines from experience items */
+#resume ul.experience li {
+    position: relative !important;
+}
+
+#resume ul.experience li::before {
+    content: '' !important;
+    position: absolute !important;
+    right: -45px !important;
+    top: 50% !important;
+    width: 40px !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, #0077be, rgba(0, 119, 190, 0.3)) !important;
+    transform: translateY(-50%) !important;
+    z-index: 5 !important;
+    border-radius: 2px !important;
+}
+
+/* Override existing pseudo-elements and add horizontal connecting lines from education items */
+#resume ul.education li {
+    position: relative !important;
+}
+
+#resume ul.education li::before {
+    content: '' !important;
+    position: absolute !important;
+    left: -45px !important;
+    top: 50% !important;
+    width: 40px !important;
+    height: 3px !important;
+    background: linear-gradient(270deg, #0077be, rgba(0, 119, 190, 0.3)) !important;
+    transform: translateY(-50%) !important;
+    z-index: 5 !important;
+    border-radius: 2px !important;
+}
+
+/* Connection dots on experience side */
+#resume ul.experience li::after {
+    content: '' !important;
+    position: absolute !important;
+    right: -50px !important;
+    top: 50% !important;
+    width: 10px !important;
+    height: 10px !important;
+    background: #0077be !important;
+    border: 3px solid #0d1117 !important;
+    border-radius: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 6 !important;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.5) !important;
+}
+
+/* Connection dots on education side */
+#resume ul.education li::after {
+    content: '' !important;
+    position: absolute !important;
+    left: -50px !important;
+    top: 50% !important;
+    width: 10px !important;
+    height: 10px !important;
+    background: #0077be !important;
+    border: 3px solid #0d1117 !important;
+    border-radius: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 6 !important;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.5) !important;
+}
+
+/* Enhanced hover effects for connected timeline */
+#resume ul.experience li:hover::before,
+#resume ul.education li:hover::before {
+    background: linear-gradient(90deg, #00bcd4, #0077be) !important;
+    width: 45px !important;
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.4) !important;
+}
+
+#resume ul.experience li:hover::after,
+#resume ul.education li:hover::after {
+    background: #00bcd4 !important;
+    transform: translateY(-50%) scale(1.3) !important;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.7) !important;
 }
 
 /* Responsive adjustments for mobile */
@@ -2728,6 +2846,10 @@ td {
     100% {
         box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
     }
+}
+
+.resume-section .row.mb-20:after {
+    animation: pulse 3s infinite ease-in-out;
 }
 
 .resume-section .row.mb-20:after {
