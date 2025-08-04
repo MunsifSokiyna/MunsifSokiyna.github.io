@@ -683,51 +683,12 @@
     });
     </script>
     
-    <!-- Academic ScrollSpy Implementation -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const sections = document.querySelectorAll('[data-section]');
-        const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
-        
-        function updateActiveNav() {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('data-section');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active', 'in-view');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        }
-        
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').slice(1);
-                const targetSection = document.querySelector(`[data-section="${targetId}"]`);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-        
-        window.addEventListener('scroll', updateActiveNav);
-        updateActiveNav();
-    });
-    </script>
     
     <script src="https://static.elfsight.com/platform/platform.js" async></script>
     <div class="elfsight-app-15131914-3a9a-443b-90a6-cf28770d182b" data-elfsight-app-lazy></div>
 </body>
 </html>
+
 
 
 
