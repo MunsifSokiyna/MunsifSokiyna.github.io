@@ -3148,3 +3148,49 @@ header .header-main .image-container.circular .header-name:before {
 
 /* Clear browser cache helper - change this number if you need to force refresh */
 /* Version: 1.0 */
+
+/* ============ UNIVERSITY OF ALABAMA LOGO STYLING ============ */
+
+.university-affiliation {
+    text-align: center !important;
+    margin: 2rem 0 !important;
+    padding: 1.5rem !important;
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-tertiary)) !important;
+    border-radius: 10px !important;
+    border: 1px solid var(--border-primary) !important;
+    box-shadow: 0 4px 15px var(--shadow-subtle) !important;
+}
+
+.university-logo {
+    max-width: 300px !important;
+    height: auto !important;
+    margin: 0 auto 1rem auto !important;
+    display: block !important;
+    opacity: 0.9 !important;
+    transition: all 0.3s ease !important;
+}
+
+.university-logo:hover {
+    opacity: 1 !important;
+    transform: scale(1.02) !important;
+}
+
+.affiliation-text {
+    color: var(--text-secondary) !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    margin-top: 0.5rem !important;
+    line-height: 1.5 !important;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 767px) {
+    .university-logo {
+        max-width: 250px !important;
+    }
+    
+    .university-affiliation {
+        padding: 1rem !important;
+        margin: 1.5rem 0 !important;
+    }
+}
