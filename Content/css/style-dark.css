@@ -874,16 +874,15 @@ header .header-mobile .header-toggle i {
     z-index: 999;
 }
 
-/*============ 9. Enhanced Banner Section - COMPATIBLE WITH PAGE SYSTEM ============*/
+/*============ 9. Enhanced Banner Section - SCROLLABLE WITH FULL CONTENT ============*/
 
 .banner-section {
     background-size: cover;
     background-position: center;
     position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: flex-start; /* Changed to flex-start */
-    overflow-y: auto; /* Allow scrolling within banner */
+    min-height: 200vh; /* Force minimum height to require scrolling */
+    display: block; /* Changed from flex */
+    overflow-y: visible; /* Allow content to extend */
     overflow-x: hidden;
 }
 
@@ -905,10 +904,10 @@ header .header-mobile .header-toggle i {
     width: 100%;
     text-align: center;
     z-index: 2;
-    padding: 2rem 2rem 4rem; /* Added bottom padding */
+    padding: 5vh 2rem 10vh; /* Increased vertical padding */
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 5vh; /* Add some top margin */
+    min-height: 200vh; /* Ensure content takes up space */
 }
 
 /* Fix main container scrolling */
@@ -1303,7 +1302,7 @@ header .header-mobile .header-toggle i {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 2rem;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 4rem;
     padding: 2rem;
     background: linear-gradient(135deg, rgba(0, 119, 190, 0.05), rgba(0, 188, 212, 0.05));
     border-radius: 15px;
@@ -1330,6 +1329,213 @@ header .header-mobile .header-toggle i {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* Recent Highlights Section */
+.recent-highlights {
+    margin-bottom: 4rem;
+}
+
+.recent-highlights h4 {
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.highlight-card {
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-tertiary));
+    border: 1px solid var(--border-primary);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-accent);
+    border-color: var(--primary-accent);
+}
+
+.highlight-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.highlight-card h5 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.highlight-card p {
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Collaboration Section */
+.collaboration-section {
+    margin-bottom: 4rem;
+}
+
+.collaboration-section h4 {
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.collaboration-areas {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.collab-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-tertiary));
+    border-radius: 12px;
+    border: 1px solid var(--border-primary);
+    transition: all 0.3s ease;
+}
+
+.collab-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 6px 20px var(--shadow-accent);
+    border-color: var(--primary-accent);
+}
+
+.collab-icon {
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    min-width: 3rem;
+}
+
+.collab-content h6 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.collab-content p {
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Quick Links Section */
+.quick-links {
+    margin-bottom: 4rem;
+}
+
+.quick-links h4 {
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quick-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-accent), var(--dark-teal));
+    color: var(--text-primary);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 119, 190, 0.3);
+}
+
+.quick-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 119, 190, 0.5);
+    background: linear-gradient(135deg, var(--light-teal), var(--primary-accent));
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.quick-link i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.quick-link span {
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Home Footer */
+.home-footer {
+    margin-top: 4rem;
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-tertiary));
+    border-radius: 12px;
+    border: 1px solid var(--border-primary);
+}
+
+.home-footer p {
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--primary-accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+.footer-links a:hover {
+    color: var(--light-teal);
+    background: rgba(0, 119, 190, 0.1);
+    text-decoration: none;
 }
 
 /* Particle Effects Background */
@@ -2308,7 +2514,7 @@ td {
     
     #main .pt-page {
         padding-top: 60px; /* Account for mobile header */
-        overflow-y: auto !important; /* Ensure scrolling on mobile */
+        overflow-y: scroll !important; /* Ensure scrolling on mobile */
     }
     
     /* Mobile Banner */
@@ -2366,10 +2572,46 @@ td {
         height: 150px;
     }
     
+    /* Mobile Achievement Highlights */
     .achievement-highlights {
         grid-template-columns: 1fr;
         gap: 1rem;
         margin-bottom: 2rem;
+    }
+    
+    /* Mobile New Sections */
+    .highlights-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .highlight-card {
+        padding: 1.5rem;
+    }
+    
+    .collab-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .collab-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .links-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .quick-link {
+        padding: 1rem;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
     }
     
     .cta-buttons {
@@ -2501,6 +2743,25 @@ td {
         height: 120px;
     }
     
+    /* Single column for all grid layouts on small screens */
+    .highlights-grid,
+    .links-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .quick-link {
+        padding: 1rem;
+    }
+    
+    .highlight-card {
+        padding: 1.2rem;
+    }
+    
+    .collab-item {
+        padding: 1.2rem;
+    }
+    
     .university-logo .alabama-logo {
         width: 40px;
         height: 40px;
@@ -2513,6 +2774,16 @@ td {
     
     .college-name {
         font-size: 0.8rem;
+    }
+    
+    .academic-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
     }
     
     .page-heading h2 {
@@ -2549,4 +2820,4 @@ td {
     }
 }
 
-/* Version: 10.0 - SCROLLING RESTORED + Photo Gallery + All Sections Fixed */
+/* Version: 11.0 - COMPLETE SCROLLING FIX + Extended Content + Full Academic Journey */
