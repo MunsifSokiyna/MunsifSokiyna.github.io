@@ -1032,94 +1032,90 @@ header .header-mobile .header-toggle i {
     opacity: 1;
 }
 
-/*============ 11. FIXED Resume Section with Proper Alignment ============*/
+/*============ 11. FIXED Resume Section with Direct Alignment ============*/
 
 .resume-section {
     background-color: var(--bg-primary);
 }
 
-/* Main Resume Row Container */
-.resume-section .row.mb-20 {
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-    margin-bottom: 60px;
+/* AGGRESSIVE RESET - Override any conflicting styles */
+#resume .row.mb-20 {
+    display: block !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 60px !important;
 }
 
-/* Column Containers */
-.resume-section .col-lg-6 {
-    flex: 1;
-    min-height: 100%;
-    vertical-align: top;
+#resume .col-lg-6 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    display: inline-block !important;
+    vertical-align: top !important;
+    width: 50% !important;
+    float: left !important;
 }
 
-/* Experience Column (Left) */
-.resume-section .col-lg-6:first-child {
-    padding-right: 1rem;
+/* Clear float after columns */
+#resume .row.mb-20:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-/* Education Column (Right) */
-.resume-section .col-lg-6:last-child {
-    padding-left: 1rem;
+/* Subheading Standardization */
+#resume .subheading {
+    margin-bottom: 30px !important;
+    margin-top: 0 !important;
+    height: auto !important;
+    text-align: center !important;
 }
 
-/* Ensure subheadings are aligned */
-.resume-section .col-lg-6 .subheading {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
-    margin-top: 0;
+#resume .subheading h3 {
+    margin: 0 !important;
+    padding: 1rem 2rem !important;
 }
 
-.resume-section .col-lg-6 .subheading h3 {
-    margin: 0;
+/* Education and Experience Lists - FORCED ALIGNMENT */
+#resume ul.education,
+#resume ul.experience {
+    margin: 0 !important;
+    padding: 0 0 0 60px !important;
+    list-style: none !important;
+    position: relative !important;
+    width: 100% !important;
 }
 
-/* Education and Experience Lists */
-.resume-section ul.education,
-.resume-section ul.experience {
-    margin: 30px 0 0 0;
-    list-style: none;
-    position: relative;
-    padding: 0 0 0 60px;
-    width: 100%;
-    min-height: 100%;
+/* Individual Items - STANDARDIZED POSITIONING */
+#resume ul.education li,
+#resume ul.experience li {
+    position: relative !important;
+    margin: 0 0 40px 15px !important;
+    padding: 30px 35px !important;
+    background: linear-gradient(135deg, var(--bg-section) 0%, #1c1c1c 100%) !important;
+    border-radius: 12px !important;
+    border-left: 4px solid var(--primary-accent) !important;
+    transition: all 0.3s ease-in-out !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid var(--border-subtle) !important;
 }
 
-/* Individual Items */
-.resume-section ul.education li,
-.resume-section ul.experience li {
-    position: relative;
-    margin-left: 15px;
-    margin-bottom: 40px;
-    padding: 30px 35px;
-    background: linear-gradient(135deg, var(--bg-section) 0%, #1c1c1c 100%);
-    border-radius: 12px;
-    border-left: 4px solid var(--primary-accent);
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    border: 1px solid var(--border-subtle);
-}
-
-/* Remove default margin from first items */
-.resume-section ul.education li:first-child,
-.resume-section ul.experience li:first-child {
-    margin-top: 0;
+/* CRITICAL: First items must be perfectly aligned */
+#resume ul.education li:first-child,
+#resume ul.experience li:first-child {
+    margin-top: 0 !important;
 }
 
 /* Hover Effects */
-.resume-section ul.education li:hover,
-.resume-section ul.experience li:hover {
-    transform: translateX(8px);
-    box-shadow: 0 8px 25px var(--shadow-accent);
-    border-left-color: var(--light-teal);
+#resume ul.education li:hover {
+    transform: translateX(-8px) !important;
+    box-shadow: 0 8px 25px var(--shadow-accent) !important;
+    border-left-color: var(--light-teal) !important;
 }
 
-/* Education specific adjustments for right alignment */
-.resume-section ul.education li:hover {
-    transform: translateX(-8px);
+#resume ul.experience li:hover {
+    transform: translateX(8px) !important;
+    box-shadow: 0 8px 25px var(--shadow-accent) !important;
+    border-left-color: var(--light-teal) !important;
 }
 
 /* Timeline Lines */
@@ -1518,43 +1514,43 @@ td {
         font-size: 1.4rem;
     }
     
-    /* Mobile Resume */
-    .resume-section .row.mb-20 {
-        flex-direction: column;
-        gap: 1rem;
-        margin-bottom: 40px;
+    /* Mobile Resume - Aggressive targeting */
+    #resume .row.mb-20 {
+        margin-bottom: 40px !important;
     }
     
-    .resume-section .col-lg-6:first-child,
-    .resume-section .col-lg-6:last-child {
-        padding-left: 0;
-        padding-right: 0;
+    #resume .col-lg-6 {
+        width: 100% !important;
+        float: none !important;
+        display: block !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin-bottom: 2rem !important;
     }
     
-    .resume-section .col-lg-6 .subheading {
-        height: auto;
-        margin-bottom: 1.5rem;
+    #resume .subheading {
+        margin-bottom: 20px !important;
     }
     
-    .resume-section ul.education,
-    .resume-section ul.experience {
-        padding: 0;
-        margin: 20px 0 0 0;
+    #resume ul.education,
+    #resume ul.experience {
+        padding: 0 !important;
+        margin: 0 !important;
     }
     
-    .resume-section ul.education span.year,
-    .resume-section ul.experience span.year {
-        left: 42px;
+    #resume ul.education span.year,
+    #resume ul.experience span.year {
+        left: 42px !important;
     }
     
-    .resume-section .skills .skill-item {
-        padding: 0;
+    #resume .skills .skill-item {
+        padding: 0 !important;
     }
     
     /* Mobile hover effects - no side movement */
-    .resume-section ul.education li:hover,
-    .resume-section ul.experience li:hover {
-        transform: translateY(-4px);
+    #resume ul.education li:hover,
+    #resume ul.experience li:hover {
+        transform: translateY(-4px) !important;
     }
 }
 
@@ -1609,4 +1605,4 @@ td {
     }
 }
 
-/* Version: 3.0 - Education Column Alignment Fix */
+/* Version: 5.0 - Aggressive Bootstrap Override with ID targeting */
