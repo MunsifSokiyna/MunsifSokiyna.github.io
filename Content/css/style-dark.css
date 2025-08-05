@@ -1032,66 +1032,20 @@ header .header-mobile .header-toggle i {
     opacity: 1;
 }
 
-/*============ 11. FIXED Resume Section with Connected Timeline ============*/
+/*============ 11. FIXED Resume Section with Direct Alignment ============*/
 
 .resume-section {
     background-color: var(--bg-primary);
-    position: relative;
 }
 
-/* CENTRAL TIMELINE SPINE */
+/* AGGRESSIVE RESET - Override any conflicting styles */
 #resume .row.mb-20 {
     display: block !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
     margin-bottom: 60px !important;
-    position: relative;
 }
 
-/* Clear float after columns */
-#resume .row.mb-20::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Central connecting timeline */
-#resume .row.mb-20::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 100px;
-    bottom: 100px;
-    width: 4px;
-    background: linear-gradient(180deg, var(--primary-accent), var(--light-teal));
-    transform: translateX(-50%);
-    z-index: 5;
-    box-shadow: 0 0 15px rgba(0, 119, 190, 0.4);
-    border-radius: 2px;
-}
-
-/* Central timeline milestone dot */
-#resume .timeline-center-dot {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 24px;
-    height: 24px;
-    background: radial-gradient(circle, var(--primary-accent), var(--dark-teal));
-    border: 5px solid var(--bg-primary);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    box-shadow: 0 0 20px rgba(0, 119, 190, 0.6);
-    animation: timeline-pulse 3s infinite ease-in-out;
-}
-
-@keyframes timeline-pulse {
-    0%, 100% { box-shadow: 0 0 20px rgba(0, 119, 190, 0.6); }
-    50% { box-shadow: 0 0 30px rgba(0, 119, 190, 0.9), 0 0 40px rgba(0, 119, 190, 0.4); }
-}
-
-/* Column Layout */
 #resume .col-lg-6 {
     padding-left: 15px !important;
     padding-right: 15px !important;
@@ -1099,7 +1053,13 @@ header .header-mobile .header-toggle i {
     vertical-align: top !important;
     width: 50% !important;
     float: left !important;
-    position: relative;
+}
+
+/* Clear float after columns */
+#resume .row.mb-20:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* Subheading Standardization */
@@ -1115,7 +1075,7 @@ header .header-mobile .header-toggle i {
     padding: 1rem 2rem !important;
 }
 
-/* Education and Experience Lists */
+/* Education and Experience Lists - FORCED ALIGNMENT */
 #resume ul.education,
 #resume ul.experience {
     margin: 0 !important;
@@ -1125,11 +1085,11 @@ header .header-mobile .header-toggle i {
     width: 100% !important;
 }
 
-/* Individual Items with Timeline Connections */
+/* Individual Items - STANDARDIZED POSITIONING */
 #resume ul.education li,
 #resume ul.experience li {
     position: relative !important;
-    margin: 0 0 50px 15px !important;
+    margin: 0 0 40px 15px !important;
     padding: 30px 35px !important;
     background: linear-gradient(135deg, var(--bg-section) 0%, #1c1c1c 100%) !important;
     border-radius: 12px !important;
@@ -1139,242 +1099,23 @@ header .header-mobile .header-toggle i {
     border: 1px solid var(--border-subtle) !important;
 }
 
-/* Left Side Timeline Lines (Keep existing design) */
-#resume ul.education li span.line-left,
-#resume ul.experience li span.line-left {
-    width: 3px;
-    height: 100%;
-    background-color: var(--primary-accent);
-    left: -15px;
-    top: 0;
-    position: absolute;
-}
-
-#resume ul.education li span.line-left:before,
-#resume ul.education li span.line-left:after,
-#resume ul.experience li span.line-left:before,
-#resume ul.experience li span.line-left:after {
-    content: "";
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 3px solid var(--primary-accent);
-    background-color: var(--bg-primary);
-    position: absolute;
-    left: -6px;
-    top: -10px;
-}
-
-#resume ul.education li span.line-left:after,
-#resume ul.experience li span.line-left:after {
-    top: 100%;
-}
-
-/* Timeline Connections to Center (Additional to existing design) */
-#resume ul.experience li:before {
-    content: '';
-    position: absolute;
-    right: -60px;
-    top: 50%;
-    width: 55px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary-accent), rgba(0, 119, 190, 0.3));
-    transform: translateY(-50%);
-    z-index: 6;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-#resume ul.education li:before {
-    content: '';
-    position: absolute;
-    left: -60px;
-    top: 50%;
-    width: 55px;
-    height: 3px;
-    background: linear-gradient(270deg, var(--primary-accent), rgba(0, 119, 190, 0.3));
-    transform: translateY(-50%);
-    z-index: 6;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-/* Connection dots */
-#resume ul.experience li:after {
-    content: '';
-    position: absolute;
-    right: -65px;
-    top: 50%;
-    width: 12px;
-    height: 12px;
-    background: var(--primary-accent);
-    border: 3px solid var(--bg-primary);
-    border-radius: 50%;
-    transform: translateY(-50%);
-    z-index: 7;
-    box-shadow: 0 0 10px rgba(0, 119, 190, 0.5);
-    transition: all 0.3s ease;
-}
-
-#resume ul.education li:after {
-    content: '';
-    position: absolute;
-    left: -65px;
-    top: 50%;
-    width: 12px;
-    height: 12px;
-    background: var(--primary-accent);
-    border: 3px solid var(--bg-primary);
-    border-radius: 50%;
-    transform: translateY(-50%);
-    z-index: 7;
-    box-shadow: 0 0 10px rgba(0, 119, 190, 0.5);
-    transition: all 0.3s ease;
-}
-
-/* Content Styling */
-#resume .education .content,
-#resume .experience .content {
-    margin-left: 10px;
-}
-
-#resume .education .content h4,
-#resume .experience .content h4 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    line-height: 1.3;
-    margin: 0 0 10px 0;
-    text-transform: uppercase;
-    color: var(--primary-accent);
-}
-
-#resume .education .content h5,
-#resume .experience .content h5 {
-    margin-top: 6px;
-    margin-bottom: 15px;
-    font-size: 15px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--light-teal);
-    letter-spacing: 1px;
-    opacity: 0.9;
-}
-
-#resume .education .content p.info,
-#resume .experience .content p.info {
-    font-size: 1rem;
-    margin-bottom: 0;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    font-weight: 400;
-}
-
-/* ENHANCED YEAR DISPLAY */
-#resume ul.education span.year,
-#resume ul.experience span.year {
-    height: 100%;
-    left: -15px;
-    top: 0;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#resume ul.education span.year span,
-#resume ul.experience span.year span {
-    font-size: 12px;
-    position: relative;
-    transform: translateX(-140%);
-    color: var(--text-primary);
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--primary-accent), var(--dark-teal));
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: 1px solid var(--primary-accent);
-    box-shadow: 0 3px 12px rgba(0, 119, 190, 0.4);
-    white-space: nowrap;
-    min-width: 70px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    letter-spacing: 0.5px;
-}
-
-#resume ul.education span.year span.to,
-#resume ul.experience span.year span.to {
-    margin-bottom: 5px;
-}
-
-#resume ul.education span.year span.from,
-#resume ul.experience span.year span.from {
-    margin-top: 5px;
-}
-
-/* Add duration indicator between dates */
-#resume ul.education span.year:before,
-#resume ul.experience span.year:before {
-    content: '●●●';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-240%, -50%);
-    color: var(--primary-accent);
-    font-size: 8px;
-    line-height: 1;
-    letter-spacing: 2px;
-    opacity: 0.7;
-}
-
-/* CRITICAL: First items alignment */
+/* CRITICAL: First items must be perfectly aligned */
 #resume ul.education li:first-child,
 #resume ul.experience li:first-child {
     margin-top: 0 !important;
 }
 
-/* Enhanced Hover Effects */
+/* Hover Effects */
 #resume ul.education li:hover {
     transform: translateX(-8px) !important;
     box-shadow: 0 8px 25px var(--shadow-accent) !important;
     border-left-color: var(--light-teal) !important;
 }
 
-#resume ul.education li:hover:before {
-    background: linear-gradient(270deg, var(--light-teal), var(--primary-accent));
-    width: 60px;
-}
-
-#resume ul.education li:hover:after {
-    background: var(--light-teal);
-    transform: translateY(-50%) scale(1.3);
-}
-
 #resume ul.experience li:hover {
     transform: translateX(8px) !important;
     box-shadow: 0 8px 25px var(--shadow-accent) !important;
     border-left-color: var(--light-teal) !important;
-}
-
-#resume ul.experience li:hover:before {
-    background: linear-gradient(90deg, var(--light-teal), var(--primary-accent));
-    width: 60px;
-}
-
-#resume ul.experience li:hover:after {
-    background: var(--light-teal);
-    transform: translateY(-50%) scale(1.3);
-}
-
-/* Skills Section */
-#resume .skills {
-    margin-bottom: 40px;
-}
-
-#resume .skills .skill-item {
-    padding: 0 20px;
-    margin-bottom: 25px;
 }
 
 /* Timeline Lines */
@@ -1773,18 +1514,7 @@ td {
         font-size: 1.4rem;
     }
     
-    /* Mobile Resume - Hide timeline connections */
-    #resume .row.mb-20::before,
-    #resume .timeline-center-dot,
-    #resume ul.experience li:before,
-    #resume ul.experience li:after,
-    #resume ul.education li:before,
-    #resume ul.education li:after,
-    #resume ul.education li span.line-left,
-    #resume ul.experience li span.line-left {
-        display: none !important;
-    }
-    
+    /* Mobile Resume - Aggressive targeting */
     #resume .row.mb-20 {
         margin-bottom: 40px !important;
     }
@@ -1808,19 +1538,9 @@ td {
         margin: 0 !important;
     }
     
-    #resume ul.education li,
-    #resume ul.experience li {
-        margin: 0 0 40px 0 !important;
-    }
-    
     #resume ul.education span.year,
     #resume ul.experience span.year {
-        left: 10px !important;
-    }
-    
-    #resume ul.education span.year:before,
-    #resume ul.experience span.year:before {
-        display: none !important;
+        left: 42px !important;
     }
     
     #resume .skills .skill-item {
@@ -1885,4 +1605,4 @@ td {
     }
 }
 
-/* Version: 7.0 - Professional Connected Timeline with Enhanced Year Display */
+/* Version: 5.0 - Aggressive Bootstrap Override with ID targeting */
