@@ -874,12 +874,15 @@ header .header-mobile .header-toggle i {
     z-index: 999;
 }
 
-/*============ 9. Banner Section ============*/
+/*============ 9. Enhanced Banner Section ============*/
 
 .banner-section {
     background-size: cover;
     background-position: center;
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .banner-section:before {
@@ -889,39 +892,115 @@ header .header-mobile .header-toggle i {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--bg-primary);
-    opacity: 0.7;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, #1a1f2e 50%, var(--bg-secondary) 100%);
+    opacity: 0.95;
 }
 
 .banner-section .banner-content {
     color: var(--text-primary);
-    position: absolute;
-    top: 50%;
+    position: relative;
     width: 100%;
     text-align: center;
-    display: block;
-    transform: translateY(-50%);
     z-index: 2;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* University Affiliation Badge */
+.university-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, rgba(165, 42, 42, 0.1), rgba(0, 119, 190, 0.1));
+    border: 2px solid var(--primary-accent);
+    border-radius: 15px;
+    padding: 1rem 2rem;
+    backdrop-filter: blur(10px);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.university-logo .alabama-logo {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #A52A2A;
+    background: linear-gradient(45deg, #A52A2A, #8B0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-right: 1rem;
+    text-shadow: 0 2px 4px rgba(165, 42, 42, 0.3);
+}
+
+.university-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.university-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1px;
+}
+
+.college-name {
+    font-size: 0.9rem;
+    color: var(--primary-accent);
+    font-weight: 500;
+    margin-top: 0.2rem;
+}
+
+/* Enhanced Main Title */
 .banner-section .banner-content h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 3.8rem;
+    font-size: 3.5rem;
     font-weight: 500;
     color: var(--primary-accent);
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     line-height: 1.1;
+    text-shadow: 0 4px 8px rgba(0, 119, 190, 0.3);
 }
 
 .banner-section .banner-content h1 span {
     font-weight: 900;
     color: var(--light-teal);
+    display: block;
+    margin-top: 0.5rem;
 }
 
-.banner-section .banner-content p {
-    font-size: 1.75rem;
+/* Professional Title Section */
+.professional-title {
+    margin-bottom: 2rem;
+}
+
+.professional-title h2 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.professional-title h3 {
+    font-size: 1.2rem;
+    color: var(--text-tertiary);
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+/* Enhanced Animated Text */
+.banner-section .banner-content p.cd-headline {
+    font-size: 1.4rem;
     color: var(--text-light);
+    margin-bottom: 3rem;
+    font-weight: 500;
 }
 
 .banner-section .banner-content p .cd-words-wrapper:after {
@@ -932,16 +1011,266 @@ header .header-mobile .header-toggle i {
 }
 
 .banner-section .banner-content p .cd-words-wrapper b {
-    font-weight: 700;
+    font-weight: 600;
     border-bottom: 2px solid var(--primary-accent);
     color: var(--primary-accent);
+    padding-bottom: 2px;
 }
 
+/* Achievement Highlights */
+.achievement-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-tertiary));
+    border: 1px solid var(--border-primary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-accent);
+    border-color: var(--primary-accent);
+}
+
+.achievement-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    min-width: 3rem;
+}
+
+.achievement-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.achievement-text strong {
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.achievement-text span {
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+}
+
+/* Research Focus Areas */
+.research-focus {
+    margin-bottom: 3rem;
+}
+
+.research-focus h4 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.focus-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.focus-tag {
+    background: linear-gradient(135deg, var(--primary-accent), var(--dark-teal));
+    color: var(--text-primary);
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 8px rgba(0, 119, 190, 0.2);
+}
+
+.focus-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 119, 190, 0.4);
+    background: linear-gradient(135deg, var(--light-teal), var(--primary-accent));
+}
+
+/* Call to Action Buttons */
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.btn-main {
+    border: 2px solid var(--primary-accent);
+    padding: 0.8rem 1.5rem;
+    text-transform: uppercase;
+    background: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--primary-accent);
+    font-weight: 600;
+    position: relative;
+    line-height: 1;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-main:hover,
+.btn-main:focus {
+    color: var(--text-primary);
+    background: linear-gradient(45deg, var(--primary-accent), var(--highlight-accent));
+    border-color: var(--highlight-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--shadow-accent);
+    text-decoration: none;
+}
+
+.btn-download {
+    background: linear-gradient(45deg, var(--primary-accent), var(--dark-teal));
+    color: var(--text-primary);
+    border-color: var(--primary-accent);
+}
+
+.btn-download:hover {
+    background: linear-gradient(45deg, var(--light-teal), var(--primary-accent));
+}
+
+/* Academic Statistics */
+.academic-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(0, 119, 190, 0.05), rgba(0, 188, 212, 0.05));
+    border-radius: 15px;
+    border: 1px solid var(--border-primary);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--primary-accent);
+    font-family: "Playfair Display", serif;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 119, 190, 0.3);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Particle Effects Background */
 .banner-section #video-container {
     position: absolute;
     height: 100%;
     width: 100%;
     z-index: -1;
+}
+
+/* Mobile Responsive for Banner */
+@media screen and (max-width: 767px) {
+    .banner-section .banner-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .professional-title h2 {
+        font-size: 1.4rem;
+    }
+    
+    .professional-title h3 {
+        font-size: 1rem;
+    }
+    
+    .banner-section .banner-content p.cd-headline {
+        font-size: 1.1rem;
+    }
+    
+    .university-badge {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .university-logo .alabama-logo {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .university-text {
+        text-align: center;
+    }
+    
+    .achievement-highlights {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-main {
+        width: 200px;
+        justify-content: center;
+    }
+    
+    .academic-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .banner-section .banner-content h1 {
+        font-size: 2rem;
+    }
+    
+    .focus-tags {
+        justify-content: center;
+    }
+    
+    .focus-tag {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
 }
 
 /*============ 10. About Section ============*/
@@ -1764,13 +2093,71 @@ td {
     }
     
     /* Mobile Banner */
+    .banner-section .banner-content {
+        position: relative;
+        top: auto;
+        transform: none;
+        padding: 60px 1rem 2rem;
+    }
+    
     .banner-section .banner-content h1 {
-        font-size: 3rem;
-        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .professional-title h2 {
+        font-size: 1.4rem;
+    }
+    
+    .professional-title h3 {
+        font-size: 1rem;
     }
     
     .banner-section .banner-content p.cd-headline {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
+    }
+    
+    .university-badge {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .university-logo .alabama-logo {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .university-text {
+        text-align: center;
+    }
+    
+    .achievement-highlights {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+    
+    .btn-main {
+        width: 200px;
+        justify-content: center;
+    }
+    
+    .academic-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
     }
     
     /* Mobile Resume - Hide timeline connections */
@@ -1844,11 +2231,31 @@ td {
 
 @media screen and (max-width: 575px) {
     .banner-section .banner-content h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     .banner-section .banner-content p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+    
+    .focus-tags {
+        justify-content: center;
+    }
+    
+    .focus-tag {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .achievement-item {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .achievement-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
     }
     
     .page-heading h2 {
@@ -1885,4 +2292,4 @@ td {
     }
 }
 
-/* Version: 7.0 - Professional Connected Timeline with Enhanced Year Display */
+/* Version: 8.0 - Enhanced Dynamic Home Page with University Branding */
