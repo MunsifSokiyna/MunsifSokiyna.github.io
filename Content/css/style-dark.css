@@ -874,7 +874,7 @@ header .header-mobile .header-toggle i {
     z-index: 999;
 }
 
-/*============ 9. Enhanced Banner Section - FIXED SCROLLING ============*/
+/*============ 9. Enhanced Banner Section - COMPATIBLE WITH PAGE SYSTEM ============*/
 
 .banner-section {
     background-size: cover;
@@ -882,8 +882,9 @@ header .header-mobile .header-toggle i {
     position: relative;
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    overflow: visible; /* Allow scrolling */
+    align-items: flex-start; /* Changed to flex-start */
+    overflow-y: auto; /* Allow scrolling within banner */
+    overflow-x: hidden;
 }
 
 .banner-section:before {
@@ -895,17 +896,19 @@ header .header-mobile .header-toggle i {
     bottom: 0;
     background: linear-gradient(135deg, var(--bg-primary) 0%, #1a1f2e 50%, var(--bg-secondary) 100%);
     opacity: 0.95;
+    z-index: 1;
 }
 
 .banner-section .banner-content {
     color: var(--text-primary);
-    position: relative; /* Changed from absolute to relative */
+    position: relative;
     width: 100%;
     text-align: center;
     z-index: 2;
-    padding: 4rem 2rem 2rem; /* Added top padding */
+    padding: 2rem 2rem 4rem; /* Added bottom padding */
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 5vh; /* Add some top margin */
 }
 
 /* Fix main container scrolling */
@@ -1408,10 +1411,80 @@ header .header-mobile .header-toggle i {
     }
 }
 
-/*============ 10. About Section ============*/
+/*============ 10. About Section - SCROLLABLE ============*/
 
 .about-section {
     background-color: var(--bg-primary);
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.about-section .section-container {
+    min-height: calc(100vh - 6rem);
+    padding: 3rem 2rem;
+}
+
+/*============ 11. FIXED Resume Section with Connected Timeline - SCROLLABLE ============*/
+
+.resume-section {
+    background-color: var(--bg-primary);
+    position: relative;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.resume-section .section-container {
+    min-height: calc(100vh - 6rem);
+    padding: 3rem 2rem;
+}
+
+/*============ 12. Research & Academic Content - SCROLLABLE ============*/
+
+.research-section {
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.research-section .section-container {
+    min-height: calc(100vh - 6rem);
+    padding: 3rem 2rem;
+}
+
+/*============ 14. Teaching Section - SCROLLABLE ============*/
+
+.teaching-section {
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.teaching-section .section-container {
+    min-height: calc(100vh - 6rem);
+    padding: 3rem 2rem;
+}
+
+/*============ 15. General Section Scrollability ============*/
+
+/* Ensure all pt-page sections can scroll */
+.pt-page.about-section,
+.pt-page.resume-section, 
+.pt-page.research-section,
+.pt-page.teaching-section,
+.pt-page.contact-section,
+.pt-page.banner-section {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+/* Ensure section containers have proper height */
+.pt-page .section-container {
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 .about-section .about h3 {
@@ -2227,12 +2300,24 @@ td {
         margin-top: 8px;
     }
     
+    /* Mobile Main Content */
+    #main {
+        left: 0px;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    #main .pt-page {
+        padding-top: 60px; /* Account for mobile header */
+        overflow-y: auto !important; /* Ensure scrolling on mobile */
+    }
+    
     /* Mobile Banner */
     .banner-section .banner-content {
         position: relative;
         top: auto;
         transform: none;
-        padding: 80px 1rem 2rem; /* Increased top padding for mobile */
+        padding: 80px 1rem 4rem; /* Increased top and bottom padding */
+        margin-top: 0; /* Remove top margin on mobile */
     }
     
     .banner-section .banner-content h1 {
@@ -2464,4 +2549,4 @@ td {
     }
 }
 
-/* Version: 9.0 - Fixed Scrolling + Academic Journey Photo Gallery */
+/* Version: 10.0 - SCROLLING RESTORED + Photo Gallery + All Sections Fixed */
