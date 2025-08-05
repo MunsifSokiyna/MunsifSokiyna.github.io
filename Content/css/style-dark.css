@@ -837,10 +837,8 @@ header .header-mobile .header-toggle i {
     right: 0;
     width: auto;
     min-height: 100vh;
-    perspective: 1200px;
     overflow-x: hidden;
     overflow-y: auto;
-    min-height: 100vh;
 }
 
 .site-main .pt-page {
