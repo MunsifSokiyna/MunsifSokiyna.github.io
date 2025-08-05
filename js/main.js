@@ -1,7 +1,7 @@
-/*****************************************************************************
+*****************************************************************************
   ____                                  _____ _
  / ___|___  ___ _ __ ___   ___  ___    |_   _| |__   ___ _ __ ___   ___  ___
-| |   / _ \/ __| '_ ` _ \ / _ \/ __|_____| | | '_ \ / _ \ '_ ` _ \ / _ \/ __|
+| |   / _ \/ __| '_  _ \ / _ \/ __|_____| | | '_ \ / _ \ '_  _ \ / _ \/ __|
 | |__| (_) \__ \ | | | | | (_) \__ \_____| | | | | |  __/ | | | | |  __/\__ \
  \____\___/|___/_| |_| |_|\___/|___/     |_| |_| |_|\___|_| |_| |_|\___||___/
 
@@ -76,19 +76,11 @@ $(document).ready(function() {
     });
 
     /*======== Active Current Link ========*/
-$('.nav-menu a').on('click', function(e) {
-    e.preventDefault();
-
-    var target = $(this).attr('href'); // e.g. "#resume"
-
-    // Reset scroll + remove active class from all sections
-    $('.pt-page').removeClass('page-active').each(function () {
-        $(this).find('.simplebar-content-wrapper').scrollTop(0); // Reset SimpleBar scroll
+    $('.nav-menu a').on('click',function() {
+        if($('.header-content.on').length) {
+            $('.header-content').removeClass('on');
+        }
     });
-
-    // Activate the clicked section
-    $(target).addClass('page-active');
-});
 
     /*======== Mobile Toggle Click Setup ========*/
     $('.header-toggle').on('click', function() {
@@ -375,4 +367,3 @@ function showAlertBox(response, message) {
     }
     $alContainer.fadeIn(300).delay(4000).fadeOut(400);
 }
-
