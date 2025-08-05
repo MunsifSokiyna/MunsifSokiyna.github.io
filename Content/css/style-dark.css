@@ -874,7 +874,7 @@ header .header-mobile .header-toggle i {
     z-index: 999;
 }
 
-/*============ 9. Enhanced Banner Section ============*/
+/*============ 9. Enhanced Banner Section - FIXED SCROLLING ============*/
 
 .banner-section {
     background-size: cover;
@@ -883,6 +883,7 @@ header .header-mobile .header-toggle i {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    overflow: visible; /* Allow scrolling */
 }
 
 .banner-section:before {
@@ -898,13 +899,35 @@ header .header-mobile .header-toggle i {
 
 .banner-section .banner-content {
     color: var(--text-primary);
-    position: relative;
+    position: relative; /* Changed from absolute to relative */
     width: 100%;
     text-align: center;
     z-index: 2;
-    padding: 2rem;
+    padding: 4rem 2rem 2rem; /* Added top padding */
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* Fix main container scrolling */
+.site-main .pt-page {
+    width: 100%;
+    height: auto; /* Changed from 100% to auto */
+    position: relative; /* Changed from absolute to relative */
+    top: 0;
+    left: 0;
+    opacity: 1; /* Make visible by default */
+    visibility: visible; /* Make visible by default */
+    overflow-y: auto; /* Allow vertical scrolling */
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    transform-style: preserve-3d;
+    z-index: 1;
+}
+
+.site-main .page-active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
 }
 
 /* University Affiliation Badge */
@@ -934,6 +957,17 @@ header .header-mobile .header-toggle i {
     background-clip: text;
     margin-right: 1rem;
     text-shadow: 0 2px 4px rgba(165, 42, 42, 0.3);
+    border: 3px solid #A52A2A;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #A52A2A, #ffffff);
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    color: white;
 }
 
 .university-text {
@@ -955,6 +989,107 @@ header .header-mobile .header-toggle i {
     color: var(--primary-accent);
     font-weight: 500;
     margin-top: 0.2rem;
+}
+
+/* Academic Journey Photo Gallery */
+.academic-journey {
+    margin-bottom: 3rem;
+}
+
+.academic-journey h4 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.journey-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.journey-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    height: 200px;
+}
+
+.journey-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 119, 190, 0.4);
+}
+
+.journey-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Specific photo backgrounds - placeholders that represent your photos */
+.alabama-stadium {
+    background: linear-gradient(45deg, #A52A2A, #8B0000),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="20" fill="white">🏟️</text></svg>');
+    background-size: cover, 30px 30px;
+    background-position: center, center;
+}
+
+.conference-presentation {
+    background: linear-gradient(45deg, #1a365d, #2d3748),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="20" fill="white">📊</text></svg>');
+    background-size: cover, 30px 30px;
+    background-position: center, center;
+}
+
+.harvard-visit {
+    background: linear-gradient(45deg, #8B0000, #654321),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="20" fill="white">🎓</text></svg>');
+    background-size: cover, 30px 30px;
+    background-position: center, center;
+}
+
+.conference-table {
+    background: linear-gradient(45deg, #2d3748, #4a5568),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="20" fill="white">🤝</text></svg>');
+    background-size: cover, 30px 30px;
+    background-position: center, center;
+}
+
+.journey-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+}
+
+.journey-item:hover .journey-overlay {
+    transform: translateY(0);
+}
+
+.journey-overlay span {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.journey-overlay small {
+    font-size: 0.8rem;
+    opacity: 0.8;
 }
 
 /* Enhanced Main Title */
@@ -2097,7 +2232,7 @@ td {
         position: relative;
         top: auto;
         transform: none;
-        padding: 60px 1rem 2rem;
+        padding: 80px 1rem 2rem; /* Increased top padding for mobile */
     }
     
     .banner-section .banner-content h1 {
@@ -2127,10 +2262,23 @@ td {
     .university-logo .alabama-logo {
         margin-right: 0;
         margin-bottom: 0.5rem;
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
     }
     
     .university-text {
         text-align: center;
+    }
+    
+    /* Mobile Journey Photos */
+    .journey-photos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .journey-item {
+        height: 150px;
     }
     
     .achievement-highlights {
@@ -2258,6 +2406,30 @@ td {
         margin-bottom: 0.5rem;
     }
     
+    /* Mobile Journey Photos - Single Column */
+    .journey-photos {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .journey-item {
+        height: 120px;
+    }
+    
+    .university-logo .alabama-logo {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .university-name {
+        font-size: 1rem;
+    }
+    
+    .college-name {
+        font-size: 0.8rem;
+    }
+    
     .page-heading h2 {
         font-size: 1.8rem;
     }
@@ -2292,4 +2464,4 @@ td {
     }
 }
 
-/* Version: 8.0 - Enhanced Dynamic Home Page with University Branding */
+/* Version: 9.0 - Fixed Scrolling + Academic Journey Photo Gallery */
