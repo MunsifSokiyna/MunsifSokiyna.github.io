@@ -76,11 +76,19 @@ $(document).ready(function() {
     });
 
     /*======== Active Current Link ========*/
-    $('.nav-menu a').on('click',function() {
-        if($('.header-content.on').length) {
-            $('.header-content').removeClass('on');
-        }
+$('.nav-menu a').on('click', function(e) {
+    e.preventDefault();
+
+    var target = $(this).attr('href'); // e.g. "#resume"
+
+    // Reset scroll + remove active class from all sections
+    $('.pt-page').removeClass('page-active').each(function () {
+        $(this).find('.simplebar-content-wrapper').scrollTop(0); // Reset SimpleBar scroll
     });
+
+    // Activate the clicked section
+    $(target).addClass('page-active');
+});
 
     /*======== Mobile Toggle Click Setup ========*/
     $('.header-toggle').on('click', function() {
