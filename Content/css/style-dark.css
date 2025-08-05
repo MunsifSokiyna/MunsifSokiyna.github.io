@@ -85,9 +85,8 @@ i, em {
 }
 
 html, body {
-    height: auto;
-    overflow-x: hidden;
-    overflow-y: auto;
+    height: 100%;
+    overflow: hidden; /* ✅ keep it locked to one section at a time */
 }
 
 body {
@@ -2511,10 +2510,11 @@ td {
         transition: all 0.3s ease-in-out;
     }
     
-    #main .pt-page {
-        padding-top: 60px; /* Account for mobile header */
-        overflow-y: scroll !important; /* Ensure scrolling on mobile */
-    }
+.pt-page {
+    height: 100vh;  /* Full screen section */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
     
     /* Mobile Banner */
     .banner-section .banner-content {
