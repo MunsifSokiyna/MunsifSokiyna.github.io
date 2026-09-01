@@ -8,6 +8,14 @@ const PUBLICATIONS = [
   {
     group: "Published Refereed Journal Articles",
     items: [
+
+      {
+        authors: "Sharma, P. N., Safadi, H., Karahanna, E., Hulland, J., & Sokiyna, M.",
+        year: "2026",
+        title: "Multi-project involvement and volunteer developers’ continued contribution to open-source software projects",
+        venue: "Journal of Strategic Information Systems",
+        link: "Pending for production"
+      },
       {
         authors: "Sokiyna, M., Herfurth, A., & Sharma, P. N.",
         year: "2026",
@@ -62,13 +70,6 @@ const PUBLICATIONS = [
     group: "Published Refereed Conference Proceedings",
     items: [
 
-      {
-        authors: "Sharma, P. N., Safadi, H., Karahanna, E., Hulland, J., & Sokiyna, M.",
-        year: "2026",
-        title: "Multi-project involvement and volunteer developers’ continued contribution to open-source software projects",
-        venue: "Journal of Strategic Information Systems",
-        Link: "Pending for production"
-      },
       {
         authors: "Sokiyna, M., & Sharma, P. N.",
         year: "2026",
