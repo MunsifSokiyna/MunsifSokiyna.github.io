@@ -13,6 +13,14 @@
 const NEWS = [
   {
     date: "2026-08",
+    tag: "Publication",
+    title: "Journal article published in the Journal of Strategic Information Systems",
+    body: "“Multi-project involvement and volunteer developers’ continued contribution to open-source software projects,” with P. N. Sharma, H. Safadi, E. Karahanna, and J. Hulland.",
+    link: "Pending"
+  },
+  
+  {
+    date: "2026-08",
     tag: "Position",
     title: "Joined the University of Central Oklahoma",
     body: "Started as Assistant Professor of Information Systems and Operations Management in the Business Analytics, Information Systems and Supply Chain Management (BISC) Department.",
@@ -31,13 +39,6 @@ const NEWS = [
     title: "Journal article published in Behavior & Information Technology",
     body: "“Threat appraisal and coping strategies: how users navigate toxicity in online technical communities,” with A. Herfurth and P. N. Sharma.",
     link: "https://doi.org/10.1080/0144929X.2026.2633774"
-  },
-  {
-    date: "2025-10",
-    tag: "Publication",
-    title: "Journal of Strategic Information Systems paper conditionally accepted",
-    body: "“Multi-project involvement and volunteer developers’ continued contribution to open-source software projects,” with P. N. Sharma, H. Safadi, E. Karahanna, and J. Hulland.",
-    link: ""
   },
   {
     date: "2025-08",
