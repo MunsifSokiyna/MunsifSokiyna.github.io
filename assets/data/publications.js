@@ -14,7 +14,8 @@ const PUBLICATIONS = [
         year: "2026",
         title: "Multi-project involvement and volunteer developers’ continued contribution to open-source software projects",
         venue: "Journal of Strategic Information Systems",
-        link: "Pending for production"
+        status: "",
+        link: "https://www.sciencedirect.com/science/article/pii/S0963868726000430"
       },
       {
         authors: "Sokiyna, M., Herfurth, A., & Sharma, P. N.",

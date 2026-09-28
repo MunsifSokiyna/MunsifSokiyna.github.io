@@ -16,7 +16,7 @@ const NEWS = [
     tag: "Publication",
     title: "Journal article published in the Journal of Strategic Information Systems",
     body: "“Multi-project involvement and volunteer developers’ continued contribution to open-source software projects,” with P. N. Sharma, H. Safadi, E. Karahanna, and J. Hulland.",
-    link: "Pending"
+    link: "https://www.sciencedirect.com/science/article/pii/S0963868726000430"
   },
   
   {
