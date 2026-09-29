@@ -12,6 +12,13 @@
 */
 const NEWS = [
   {
+    date: "2026-09",
+    tag: "Publication",
+    title: "PhD dissertation published on ProQuest",
+    body: "“Detecting and Analyzing Toxic Behavior in OSS Communities” is now publicly available through ProQuest Dissertations &amp; Theses.",
+    link: "https://www.proquest.com/openview/307db3c1708ae2a22480694297fd1600/1?pq-origsite=gscholar&cbl=18750&diss=y"
+  },
+  {
     date: "2026-08",
     tag: "Publication",
     title: "Journal article published in the Journal of Strategic Information Systems",
