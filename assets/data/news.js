@@ -30,7 +30,7 @@ const NEWS = [
     date: "2026-08",
     tag: "Position",
     title: "Joined the University of Central Oklahoma",
-    body: "Started as Assistant Professor of Information Systems and Operations Management in the Business Analytics, Information Systems and Supply Chain Management (BISC) Department.",
+    body: "Started as Assistant Professor of Information Systems and Analytics in the Business Analytics, Information Systems and Supply Chain Management (BISC) Department.",
     link: ""
   },
   {
