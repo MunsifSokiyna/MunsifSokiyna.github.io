@@ -137,8 +137,16 @@ const PUBLICATIONS = [
         authors: "Mim, M., & Sokiyna, M.",
         year: "2026",
         title: "Juggling Multiple AIs: A Framework for Understanding Human-AI Delegation in Multi-Agent Settings",
-        venue: "Target: MIS Quarterly",
+        venue: "Target: Journal of the Association for Information Systems (JAIS)",
         status: "In Preparation (Expected submission: November 2026)",
+        link: ""
+      },
+      {
+        authors: "Sokiyna, M., Herfurth, A., Das, S., & Sharma, P. N.",
+        year: "2026",
+        title: "When AI writes the code: Trust and community cohesion in OSS development",
+        venue: "Extended journal version of the ICIS 2025 paper · Target: MIS Quarterly",
+        status: "In Preparation",
         link: ""
       }
     ]
