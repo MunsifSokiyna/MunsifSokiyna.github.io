@@ -132,6 +132,14 @@ const PUBLICATIONS = [
         venue: "Presented at the OpenForum Academy Symposium, Harvard University · Target: Human–Computer Interaction",
         status: "In Preparation",
         link: ""
+      },
+      {
+        authors: "Mim, M., & Sokiyna, M.",
+        year: "2026",
+        title: "Juggling Multiple AIs: A Framework for Understanding Human-AI Delegation in Multi-Agent Settings",
+        venue: "Target: MIS Quarterly",
+        status: "In Preparation (Expected submission: November 2026)",
+        link: ""
       }
     ]
   }
